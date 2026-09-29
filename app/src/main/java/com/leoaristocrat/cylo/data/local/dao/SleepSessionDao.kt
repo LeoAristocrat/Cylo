@@ -1,0 +1,55 @@
+﻿package com.leoaristocrat.cylo.data.local.dao
+
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import androidx.room.Update
+import com.leoaristocrat.cylo.data.local.entity.SleepSessionEntity
+import kotlinx.coroutines.flow.Flow
+
+@Dao
+interface SleepSessionDao {
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertSession(session: SleepSessionEntity): Long
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertAll(sessions: List<SleepSessionEntity>)
+
+    @Update
+    suspend fun updateSession(session: SleepSessionEntity)
+
+    @Delete
+    suspend fun deleteSession(session: SleepSessionEntity)
+
+    @Query("SELECT * FROM sleep_sessions ORDER BY startTimeEpochMs DESC")
+    fun getAllSessions(): Flow<List<SleepSessionEntity>>
+
+    @Query("SELECT * FROM sleep_sessions ORDER BY startTimeEpochMs ASC")
+    suspend fun getAllSessionsList(): List<SleepSessionEntity>
+
+    @Query("SELECT * FROM sleep_sessions ORDER BY startTimeEpochMs DESC LIMIT 1")
+    fun getLatestSession(): Flow<SleepSessionEntity?>
+
+    @Query("SELECT * FROM sleep_sessions WHERE startTimeEpochMs >= :startTimeMs AND startTimeEpochMs <= :endTimeMs ORDER BY startTimeEpochMs ASC")
+    fun getSessionsBetween(startTimeMs: Long, endTimeMs: Long): Flow<List<SleepSessionEntity>>
+
+    @Query("SELECT * FROM sleep_sessions WHERE syncedToHealthConnect = 0")
+    suspend fun getUnsyncedSessions(): List<SleepSessionEntity>
+
+    @Query("SELECT * FROM sleep_sessions WHERE (startTimeEpochMs = :startTimeMs AND endTimeEpochMs = :endTimeMs) OR (startTimeEpochMs < :endTimeMs AND endTimeEpochMs > :startTimeMs) LIMIT 1")
+    suspend fun findDuplicateOrOverlappingSession(startTimeMs: Long, endTimeMs: Long): SleepSessionEntity?
+
+    @Query("DELETE FROM sleep_sessions WHERE id NOT IN (SELECT MIN(id) FROM sleep_sessions GROUP BY startTimeEpochMs, endTimeEpochMs)")
+    suspend fun removeDuplicateSessions()
+
+    @Query("SELECT AVG(durationMinutes) FROM sleep_sessions WHERE startTimeEpochMs >= :sinceEpochMs")
+    fun getAverageDurationMinutesSince(sinceEpochMs: Long): Flow<Double?>
+
+    @Query("SELECT COUNT(*) FROM sleep_sessions")
+    fun getTotalSessionsCount(): Flow<Int>
+
+    @Query("DELETE FROM sleep_sessions")
+    suspend fun deleteAllSessions()
+}

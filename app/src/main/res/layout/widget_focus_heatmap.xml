@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:padding="10dp">
+
+    <!-- ==========================================
+         1. Header: Icon + "Heat Map" + Streak Pill
+         ========================================== -->
+    <LinearLayout
+        android:id="@+id/widget_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:background="@drawable/widget_icon_badge">
+
+            <ImageView
+                android:id="@+id/widget_icon"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_streak"
+                android:tint="@color/widget_accent_on_container" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/widget_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="Heat Map"
+            android:textColor="@color/widget_text_primary"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/widget_today_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/widget_score_badge"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="3dp"
+            android:text="Today 0m"
+            android:textColor="@color/widget_text_primary"
+            android:textSize="10.5sp"
+            android:textStyle="bold"
+            tools:text="Today 2h 15m" />
+
+        <TextView
+            android:id="@+id/widget_streak_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/widget_score_badge"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="3dp"
+            android:text="0d Streak"
+            android:textColor="@color/widget_accent_primary"
+            android:textSize="10.5sp"
+            android:textStyle="bold"
+            tools:text="5d Streak" />
+    </LinearLayout>
+
+    <!-- ==========================================
+         2. Center: 2-Month YearTab Exact Heatmap Canvas
+         ========================================== -->
+    <ImageView
+        android:id="@+id/widget_heatmap_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/widget_header"
+        android:layout_marginTop="4dp"
+        android:scaleType="fitCenter" />
+
+</RelativeLayout>

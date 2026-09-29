@@ -1,0 +1,17 @@
+﻿package com.leoaristocrat.cylo.data.repository
+
+import com.leoaristocrat.cylo.data.local.dao.TaskDao
+import com.leoaristocrat.cylo.data.local.entity.TaskEntity
+import kotlinx.coroutines.flow.Flow
+
+class TaskRepository(private val taskDao: TaskDao) {
+    fun getAllTasks(): Flow<List<TaskEntity>> = taskDao.getAllTasks()
+
+    suspend fun insertTask(task: TaskEntity): Long = taskDao.insertTask(task)
+
+    suspend fun updateTask(task: TaskEntity) = taskDao.updateTask(task)
+
+    suspend fun updateTasks(tasks: List<TaskEntity>) = taskDao.updateTasks(tasks)
+
+    suspend fun deleteTask(task: TaskEntity) = taskDao.deleteTask(task)
+}

@@ -1,0 +1,286 @@
+<resources>
+    <!-- App & Navigation -->
+    <string name="app_name">Cylo</string>
+    <string name="tab_focus">Focus</string>
+    <string name="tab_plan">Plan</string>
+    <string name="tab_analyze">Analyze</string>
+    <string name="profile">Profile</string>
+
+    <!-- Analyze Navigation Tabs -->
+    <string name="analyze_tab_overview">Overview</string>
+    <string name="analyze_tab_day">Day</string>
+    <string name="analyze_tab_week">Week</string>
+    <string name="analyze_tab_year">Year</string>
+
+    <!-- Overview Tab -->
+    <string name="title_todays_focus">Today\'s Focus</string>
+    <string name="label_focus_time">Focus Time</string>
+    <string name="label_sessions">Sessions</string>
+    <string name="title_streaks">Streaks</string>
+    <string name="label_current_streak">Current Streak</string>
+    <string name="label_best_streak">Best Streak</string>
+    <string name="title_activity_log">Activity Log</string>
+    <string name="label_days_focused">Days Focused</string>
+    <string name="label_avg_focus_day">Avg Focus Day</string>
+    <string name="label_total_focus">Total Focus</string>
+    <string name="title_lifetime_focus">Lifetime Focus</string>
+    <string name="badge_overview">OVERVIEW</string>
+    <string name="label_total_focus_time">Total Focus Time</string>
+    <string name="label_total_sessions">Total Sessions</string>
+    <string name="label_focus_days">Focus Days</string>
+
+    <!-- Day Tab -->
+    <string name="title_daily_timeline">Daily Timeline</string>
+    <string name="empty_no_focus_sessions_day">No focus sessions for this day.</string>
+    <string name="action_start_focus">Start Focusing</string>
+    <string name="title_hourly_focus">Hourly Focus</string>
+
+    <!-- Week Tab -->
+    <string name="title_weekly_focus">Weekly Focus</string>
+    <string name="label_total_time">Total Time</string>
+    <string name="title_focus_distribution">Focus Distribution</string>
+    <string name="label_total">Total</string>
+    <string name="empty_no_focus_data_week">No focus data available yet.</string>
+    <string name="title_focus_trends">Focus Trends</string>
+
+    <!-- Year Tab -->
+    <string name="title_yearly_focus">Yearly Focus</string>
+    <string name="label_avg_session">Avg Session</string>
+    <string name="label_best_day">Best Day</string>
+    <string name="label_best_week">Best Week</string>
+    <string name="label_best_month">Best Month</string>
+    <string name="title_heat_map">Heat Map</string>
+
+    <!-- Navigation Actions & Common -->
+    <string name="action_previous">Previous</string>
+    <string name="action_next">Next</string>
+    <string name="action_previous_month">Previous Month</string>
+    <string name="action_next_month">Next Month</string>
+    <string name="action_previous_day">Previous Day</string>
+    <string name="action_next_day">Next Day</string>
+    <string name="action_previous_week">Previous Week</string>
+    <string name="action_next_week">Next Week</string>
+    <string name="action_previous_year">Previous Year</string>
+    <string name="action_next_year">Next Year</string>
+    <string name="empty_action_default">Go here to start one</string>
+    <string name="calendar">Calendar</string>
+
+    <!-- Plan Screen -->
+    <string name="plan_placeholder_new_task">What are you focusing on?</string>
+    <string name="plan_empty_tasks">No tasks yet. Tap + below to add your first task!</string>
+    <string name="plan_action_add_task">Add Task</string>
+    <string name="plan_content_desc_completed">Completed</string>
+    <string name="plan_content_desc_reorder">Reorder task</string>
+    <string name="plan_section_completed">Completed (%1$d)</string>
+    <string name="plan_action_clear_completed">Clear</string>
+    <string name="task_add_title">New Task</string>
+    <string name="task_estimated_sessions">Estimated Sessions</string>
+    <string name="task_category_label">Category</string>
+
+    <!-- Tags -->
+    <string name="tag_choose_button">Tag</string>
+    <string name="tag_no_tag">No Tag</string>
+    <string name="tag_select_title">Select Tag</string>
+    <string name="tag_create_new">Create New Tag</string>
+    <string name="tag_delete_title">Delete Tag</string>
+    <string name="tag_delete_mode_hint">Select a tag to delete</string>
+    <string name="tag_delete_confirm_message">Delete \"%1$s\"? Past focus sessions keep their history but lose this tag label. This can\'t be undone.</string>
+    <string name="tag_name_placeholder">Tag name</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_create">Create</string>
+
+    <!-- Pomodoro & Timer -->
+    <string name="mode_focus">Focus</string>
+    <string name="mode_short_break">Short Break</string>
+    <string name="mode_long_break">Long Break</string>
+    <string name="clock_style_flip_card">Flip Card</string>
+    <string name="clock_style_concentric">Concentric</string>
+    <string name="timer_start">Start</string>
+    <string name="timer_pause">Pause</string>
+    <string name="timer_resume">Resume</string>
+    <string name="timer_restart">Restart</string>
+
+    <!-- Notifications -->
+    <string name="notification_timer_title">Cylo Pomodoro</string>
+    <string name="notification_session_completed">%1$s session completed!</string>
+    <string name="notification_time_remaining">%1$s • %2$s remaining</string>
+    <string name="notification_channel_name">Pomodoro Timer</string>
+    <string name="notification_channel_desc">Shows live countdown timer during focus and break sessions</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Settings</string>
+    <string name="title_focus_settings">Focus Settings</string>
+    <string name="section_adjust_durations">Adjust durations</string>
+    <string name="section_configuration">Configuration</string>
+    <string name="label_pomodoros">Pomodoros</string>
+    <string name="label_long_break">Long break</string>
+    <string name="section_session_preview">Session preview</string>
+    <string name="label_total_time_preview">Total time</string>
+    <string name="label_end_time_preview">End time</string>
+    <string name="back">Back</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="ok">OK</string>
+    <string name="action_reset">Reset</string>
+    <string name="settings_section_timer">Focus Settings</string>
+    <string name="settings_work_duration">Focus Duration</string>
+    <string name="settings_short_break">Short Break Duration</string>
+    <string name="settings_long_break">Long Break Duration</string>
+    <string name="settings_long_break_interval">Long Break Interval</string>
+    <string name="settings_daily_goal">Daily Focus Goal</string>
+    <string name="settings_section_automation">Automation &amp; Focus</string>
+    <string name="settings_auto_start_breaks">Auto-start Breaks</string>
+    <string name="settings_auto_start_breaks_desc">Start breaks automatically after focus</string>
+    <string name="settings_auto_start_pomodoros">Auto-start Focus</string>
+    <string name="settings_auto_start_pomodoros_desc">Start focus sessions automatically after break</string>
+    <string name="settings_keep_screen_on">Keep Screen Awake</string>
+    <string name="settings_keep_screen_on_desc">Prevent screen from sleeping during active sessions</string>
+    <string name="settings_dnd">Do Not Disturb</string>
+    <string name="settings_dnd_desc">Silence notifications while focusing</string>
+    <string name="settings_dial_tick_motion">Tick-tick dial motion</string>
+    <string name="settings_dial_tick_motion_desc">Rotate outer seconds dial in discrete ticks instead of smooth sweep</string>
+    <string name="settings_section_sound">Sound &amp; Vibration</string>
+    <string name="settings_alarm_sound_picker">Alarm sound</string>
+    <string name="settings_sound_enabled">Sound</string>
+    <string name="settings_sound_enabled_desc">Ring alarm when a timer completes</string>
+    <string name="settings_vibration_enabled">Vibration</string>
+    <string name="settings_vibration_enabled_desc">Vibrate when a timer completes</string>
+    <string name="settings_headphone_mode">Headphone mode</string>
+    <string name="settings_headphone_mode_desc">Plays through headphones when connected, otherwise rings on device speaker.</string>
+    <string name="settings_section_appearance">Appearance &amp; Theme</string>
+    <string name="settings_theme_mode">Theme</string>
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="pref_appearance_theme_picker_label">App Theme</string>
+    <string name="theme_default">Default</string>
+    <string name="theme_dynamic">Dynamic</string>
+    <string name="theme_nothing_os">Nothing OS</string>
+    <string name="theme_catppuccin">Catppuccin</string>
+    <string name="theme_cloudflare">Cloudflare</string>
+    <string name="theme_cotton_candy">Cotton Candy</string>
+    <string name="theme_doom">Doom</string>
+    <string name="theme_green_apple">Green Apple</string>
+    <string name="theme_gruvbox">Gruvbox</string>
+    <string name="theme_kanagawa">Kanagawa</string>
+    <string name="theme_lavender">Lavender</string>
+    <string name="theme_midnight">Midnight</string>
+    <string name="theme_mocha">Mocha</string>
+    <string name="theme_strawberry">Strawberry</string>
+    <string name="theme_tidal">Tidal</string>
+    <string name="theme_nord">Nord</string>
+    <string name="theme_rose_pine">Rosé Pine</string>
+    <string name="theme_tako_green">Tako</string>
+    <string name="theme_tokyo_night">Tokyo Night</string>
+    <string name="theme_yin_yang">Yin Yang</string>
+    <string name="theme_yotsuba">Yotsuba</string>
+    <string name="theme_sapphire">Sapphire</string>
+    <string name="theme_sunset">Sunset</string>
+    <string name="theme_ocean">Ocean</string>
+    <string name="theme_forest">Forest</string>
+    <string name="theme_rose_gold">Rose Gold</string>
+    <string name="theme_violet">Violet</string>
+    <string name="theme_amber">Amber</string>
+    <string name="theme_coral">Coral</string>
+    <string name="theme_slate">Slate</string>
+    <string name="theme_dracula">Dracula</string>
+    <string name="theme_monochrome">Monochrome</string>
+    <string name="settings_dynamic_color">Dynamic color</string>
+    <string name="settings_dynamic_color_desc">Adapt theme colors from your wallpaper</string>
+    <string name="settings_color_scheme">Color scheme</string>
+    <string name="settings_amoled_black">Black theme</string>
+    <string name="settings_amoled_black_desc">Use a pure black dark theme</string>
+    <string name="settings_nothing_os_theme">Nothing OS Theme</string>
+    <string name="settings_nothing_os_theme_desc">Dot matrix NDot typography, signature red accents &amp; dark aesthetics</string>
+    <string name="settings_section_about">About &amp; Developer</string>
+    <string name="settings_about_desc">Leo Aristocrat, open source &amp; info</string>
+
+    <!-- Sleep Monitor -->
+    <!-- Sleep Monitor -->
+    <string name="tab_sleep">Sleep</string>
+    <string name="tab_steps">Steps</string>
+    <string name="title_sleep">Sleep</string>
+    <string name="settings_section_sleep">Sleep Tracking</string>
+    <string name="settings_sleep_desc">Automatic sleep tracking, sleep stages, goals &amp; sync</string>
+    <string name="settings_sleep_master_title">Sleep Tracking</string>
+    <string name="settings_sleep_master_desc">Track sleep duration, stages, and wake times automatically</string>
+    <string name="settings_sleep_disabled_hint">Turn on sleep tracking to configure sleep targets and sync.</string>
+    <string name="settings_section_sleep_goal">Sleep Target</string>
+    <string name="settings_sleep_goal">Daily Sleep Goal</string>
+    <string name="settings_sleep_goal_desc">Target duration for optimal rest and recovery</string>
+    <string name="settings_section_sleep_tracking_sync">Sync</string>
+    <string name="settings_section_sleep_tracking_sync_desc">Connected health services</string>
+    <string name="settings_health_connect_sync">Health Connect Sync</string>
+    <string name="settings_health_connect_sync_desc">Sync with Google Health Connect</string>
+    <string name="settings_sync_now">Sync Data Now</string>
+    <string name="settings_sync_now_desc">Manually push and pull latest records</string>
+    <string name="settings_sync_success">Synced with Health Connect</string>
+    <string name="settings_sleep_info_title">On-Device &amp; Private</string>
+    <string name="settings_sleep_info_desc">Sleep is automatically detected on-device using Google\'s low-power ML models with zero battery drain and complete privacy.</string>
+    <string name="sleep_score">Sleep Score</string>
+    <string name="sleep_duration">Time Asleep</string>
+    <string name="sleep_bedtime">Bedtime</string>
+    <string name="sleep_wake_up">Wake Up</string>
+    <string name="sleep_status_monitoring">Monitoring Active</string>
+    <string name="sleep_status_paused">Monitoring Paused</string>
+    <string name="sleep_status_permission_needed">Permission Required</string>
+    <string name="sleep_recent_history">Recent Sleep History</string>
+    <string name="sleep_weekly_trend">Weekly Sleep Trend</string>
+    <string name="sleep_action_sync">Sync Health Connect</string>
+    <string name="sleep_action_log_manual">Log Sleep</string>
+    <string name="sleep_empty_history">No sleep sessions recorded yet.\nSleep tracking will automatically log your rest.</string>
+
+    <string name="settings_section_data">Data &amp; Backup</string>
+    <string name="settings_data_desc">Backup, restore &amp; manage data</string>
+    <string name="backup_create_title">Create Backup</string>
+    <string name="backup_create_desc">Export data &amp; settings to a JSON file</string>
+    <string name="backup_restore_title">Restore Backup</string>
+    <string name="backup_restore_desc">Import data from a Cylo or Kimon JSON file</string>
+    <string name="backup_restore_mode_title">Restore Mode</string>
+    <string name="backup_restore_replace">Replace Current Data</string>
+    <string name="backup_restore_replace_desc">Overwrites current database with backup</string>
+    <string name="backup_restore_merge">Merge with Current Data</string>
+    <string name="backup_restore_merge_desc">Appends records without overwriting existing data</string>
+    <string name="backup_success">Backup created successfully</string>
+    <string name="restore_success">Data restored successfully</string>
+    <string name="backup_error">Backup operation failed</string>
+    <string name="restore_error">Failed to restore backup. Invalid JSON file.</string>
+    <string name="reset_data_title">Erase &amp; Reset All Data</string>
+    <string name="reset_data_desc">Erase all app data and reset settings</string>
+    <string name="reset_data_confirm_message">Are you sure you want to erase all data? This will reset all records and settings to factory defaults. This action cannot be undone.</string>
+
+    <!-- Widgets -->
+    <string name="widget_sleep_title">Last Night\'s Sleep</string>
+    <string name="widget_sleep_desc">Glance at last night\'s sleep duration, quality score, and goal progress</string>
+    <string name="widget_heatmap_title">Focus Heatmap</string>
+    <string name="widget_heatmap_desc">16-week visual activity heatmap and streak tracker</string>
+
+    <!-- Step Counter -->
+    <string name="title_step_counter">Daily Steps</string>
+    <string name="label_steps">Steps</string>
+    <string name="label_distance">Distance</string>
+    <string name="label_calories">Calories</string>
+    <string name="step_permission_prompt">Physical activity permission needed to track steps</string>
+    <string name="action_enable_steps">Enable Step Tracker</string>
+    <string name="step_sensor_unavailable">Step sensor not available on this device</string>
+    <string name="settings_section_step">Step Tracking</string>
+    <string name="settings_section_step_goal">Step Target</string>
+    <string name="settings_step_goal">Daily Step Goal</string>
+    <string name="settings_step_goal_desc">Target steps for daily activity and movement</string>
+    <string name="settings_section_step_sensor">Sensor &amp; Hardware</string>
+    <string name="settings_step_sensor_title">Hardware Step Sensor</string>
+    <string name="settings_step_sensor_desc">Dedicated low-power pedometer chip</string>
+    <string name="settings_step_info_title">On-Device &amp; Private</string>
+    <string name="settings_step_info_desc">Steps are detected entirely on-device using your phone\'s dedicated low-power pedometer hardware sensor with zero battery drain, zero network usage, and complete privacy.</string>
+
+    <!-- App updates -->
+    <string name="updates_channel_name">App updates</string>
+    <string name="updates_channel_desc">Notifies you when a new version is available on GitHub</string>
+    <string name="update_available_title">Update available: v%1$s</string>
+    <string name="update_available_body">A newer version of Cylo is available. Tap to download it from GitHub.</string>
+    <string name="update_check_title">Check for updates</string>
+    <string name="update_checking">Checking for updates…</string>
+    <string name="update_up_to_date">You\'re on the latest version (v%1$s)</string>
+    <string name="update_found">Update available: v%1$s</string>
+    <string name="update_check_failed">Couldn\'t check for updates</string>
+</resources>
