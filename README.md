@@ -1,95 +1,95 @@
-# Cylo — Focus, Planning & Sleep Companion
+<p align="center">
+  <img src="fastlane/metadata/android/en-US/images/icon.png" width="128" height="128" alt="Cylo App Icon" />
+</p>
 
-> **Built by Leo Aristocrat**  
-> An expressive, modern Android companion for deep focus, task planning, activity tracking, and comprehensive sleep monitoring.
+# Cylo — Mindful Focus, Planning & Daily Rhythm
 
-Cylo is built with **Kotlin**, **Jetpack Compose**, and **Material 3 Expressive**, leveraging modern Android architecture components, hardware sensors, and system health APIs.
+> **Crafted by Leo Aristocrat**  
+> An intentional, distraction-free productivity workspace for Android that merges deep focus intervals, structured task planning, habit analytics, and holistic rest monitoring.
 
----
+[![GitHub](https://img.shields.io/badge/GitHub-LeoAristocrat%2FCylo-6C5CE7?logo=github)](https://github.com/LeoAristocrat/Cylo)
+[![License](https://img.shields.io/badge/License-PolyForm%20Noncommercial-blue)](LICENSE.md)
+[![Platform](https://img.shields.io/badge/Platform-Android-green?logo=android)](https://www.android.com)
 
-## Features
-
-### Focus
-* **Pomodoro Timer**: Highly customizable focus sessions with concentric-dial and flip-clock timer interfaces.
-* **Tagging System**: Organize focus sessions by custom colored tags with target daily allocations.
-* **Flow Enhancements**: Automatic break/focus transitions, keep-screen-on mode, and Do-Not-Disturb (DND) integration.
-* **Persistent Notification**: Low-overhead foreground service countdown with quick actions.
-
-### Analyze
-* **Comprehensive Stats**: Track daily, weekly, yearly, and all-time focus statistics.
-* **Visual Breakdown**: Dynamic tag distribution donut charts, focus trends, and hourly breakdown charts.
-* **Streaks & Heatmap**: Daily focus streaks and a continuous GitHub-style calendar activity heatmap.
-
-### Plan
-* **Task Management**: Lightweight task list with estimated focus sessions.
-* **Seamless Workflow**: Quick swipe-to-delete, tag association, and completion status.
-
-### Sleep
-* **Automatic Detection**: Low-power sleep detection via Google Play Services Sleep API.
-* **Health Connect Integration**: Two-way synchronization with Android Health Connect.
-* **Manual Logs & Sleep Score**: Sleep duration, quality scoring, consistency tracking, and weekly breakdown.
-
-### Steps & Activity
-* **Hardware Step Counter**: Built-in pedometer sensor support with background step accumulation.
-* **Daily Goals**: Configurable daily step goals with continuous progress metrics.
-
-### Home-Screen Widgets
-* **Last Night's Sleep Widget**: Glanceable sleep duration, quality rating, and bedtime/wake times.
-* **Focus Heatmap Widget**: Dynamic calendar heatmap with streak and daily focus summary directly on your launcher.
-
-### Data & Customization
-* **JSON Backup & Restore**: Full local export and import into a single JSON file (compatible with both Cylo and legacy backups).
-* **Expressive Appearance**: Dynamic system colors (Material You), AMOLED pitch-black mode, and curated palettes.
+Cylo approaches productivity as an organic rhythm: purposeful focus periods, disciplined execution, reflective analysis, and restorative recovery. Engineered from the ground up with **Kotlin**, **Jetpack Compose**, and **Material 3 Expressive**, Cylo delivers a fluid, AMOLED-optimized experience that feels right at home on modern Android.
 
 ---
 
 ## Screenshots
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122207_Cylo.png" width="200"/><br/>
-      <sub><b>Focus Timer</b></sub>
-    </td>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122211_Cylo.png" width="200"/><br/>
-      <sub><b>Analyze — Overview</b></sub>
-    </td>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122231_Cylo.png" width="200"/><br/>
-      <sub><b>Plan</b></sub>
-    </td>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122234_Cylo.png" width="200"/><br/>
-      <sub><b>Sleep & Steps</b></sub>
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="25%">
+        <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_01_Focus_Dial.png" width="220" alt="Focus Timer - Concentric Dial" /><br/>
+        <sub><b>Focus — Concentric Dial</b></sub>
+      </td>
+      <td align="center" width="25%">
+        <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_02_Focus_Flip.png" width="220" alt="Focus Timer - Flip Clock" /><br/>
+        <sub><b>Focus — Flip Clock</b></sub>
+      </td>
+      <td align="center" width="25%">
+        <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_03_Plan.png" width="220" alt="Plan - Tasks & Sessions" /><br/>
+        <sub><b>Plan — Tasks & Sessions</b></sub>
+      </td>
+      <td align="center" width="25%">
+        <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_04_Analyze.png" width="220" alt="Analyze - Overview & Activity Heatmap" /><br/>
+        <sub><b>Analyze — Activity & Trends</b></sub>
+      </td>
+    </tr>
+  </table>
+</div>
 
-[View all screenshots](SCREENSHOTS.md)
+---
+
+## Key Pillars
+
+### ⏱️ Immersive Flow States (Focus)
+* **Sculpted Clock Designs**: Seamlessly swap between distinctive visual expressions tailored to your focus style — from mechanical **Flip Cards** and precision **Concentric Dials** to breathing pulses and minimalist arcs.
+* **Purpose-Driven Allocations**: Associate focus intervals with custom color-coded tags and establish daily allocation targets.
+* **Frictionless Transitions**: Automated short/long break sequences, optional ambient display preservation, and smart Do-Not-Disturb (DND) suppression.
+* **Live System Countdown**: Unobtrusive foreground service status with responsive media-style controls.
+
+### 📈 Temporal Reflection & Analytics (Analyze)
+* **GitHub-Style Activity Heatmap**: Visualize long-term discipline and daily commitment through a continuous calendar intensity map.
+* **Multi-Scale Insights**: Evaluate personal output across daily, weekly, monthly, and yearly horizons with tag distribution donuts and hourly concentration curves.
+* **Streak Dynamics**: Stay motivated by tracking active consistency streaks alongside your lifetime bests.
+
+### 📋 Intentional Task Stacks (Plan)
+* **Targeted Session Planning**: Define high-leverage tasks and estimate how many focus blocks are needed to reach completion.
+* **Ergonomic Workflow**: Fluid gesture-based task management with quick completions, smooth reordering, and tag organization designed for one-handed use.
+
+### 🌙 Holistic Balance (Sleep & Movement)
+* **Restorative Sleep Tracking**: Monitor sleep regularity and quality metrics via Android Health Connect two-way synchronization and Google Play Sleep API sensing.
+* **Passive Activity Sensing**: Count your steps throughout the day using hardware-level pedometer integration with zero battery drain.
+
+### 🎨 Personalization & Sovereignty
+* **Material You Expressive**: Adapts organically to your dynamic system wallpaper colors, with pitch-black pure OLED dark mode and curated color themes.
+* **Launcher Widgets**: Check your consistency streak, activity heatmap, or sleep recovery score directly on your home screen.
+* **100% Offline & Private**: All data stays strictly on your device. Easily export and import your full history via clean JSON files.
 
 ---
 
 ## Tech Stack & Architecture
 
-* **UI & Design**: [Jetpack Compose](https://developer.android.com/jetpack/compose), Material 3 Expressive, Edge-to-Edge display
-* **Navigation**: AndroidX Navigation 3 (`androidx.navigation3`)
-* **State & Concurrency**: Kotlin Coroutines, StateFlow, Android Architecture Components (ViewModel, Lifecycle)
-* **Local Persistence**: [Room Database](https://developer.android.com/training/data-storage/room) with SQLite, Kotlinx Serialization
-* **Health & Sensors**:
-  * Google Play Services Sleep API
+* **UI Framework**: [Jetpack Compose](https://developer.android.com/jetpack/compose) with Material 3 Expressive, Edge-to-Edge window insets
+* **Navigation Architecture**: AndroidX Navigation 3 (`androidx.navigation3`)
+* **Reactive Concurrency**: Kotlin Coroutines & StateFlow with Lifecycle-aware ViewModels
+* **Local Persistence**: [Room Database](https://developer.android.com/training/data-storage/room) (SQLite) with Kotlinx Serialization
+* **Health & Sensor Integrations**:
   * Android Health Connect API
-  * Hardware Step Counter Sensor (`Sensor.TYPE_STEP_COUNTER`)
-* **Background Processing**: Android Foreground Services with notification channels
+  * Google Play Services Sleep API
+  * Hardware Pedometer Sensor (`Sensor.TYPE_STEP_COUNTER`)
+* **Background Tasks**: Foreground Services with low-overhead notification lifecycles
 
 ---
 
 ## Building from Source
 
 ### Prerequisites
-* JDK 21 or higher (OpenJDK 21 / JBR recommended)
+* JDK 21 or higher (OpenJDK 21 / Android Studio JBR recommended)
 * Android SDK (compileSdk / targetSdk: Android 15 / API 37)
-* Minimum Android version: Android 10 (API level 29)
+* Minimum Supported OS: Android 10 (API level 29)
 
 ### Build Commands
 
@@ -100,31 +100,32 @@ Cylo is built with **Kotlin**, **Jetpack Compose**, and **Material 3 Expressive*
 # Run unit tests
 ./gradlew testDebugUnitTest
 
-# Run linter
+# Run code linter
 ./gradlew lint
 
-# Compile release APK
+# Compile signed release APK
 ./gradlew assembleRelease
 ```
 
-### Release Signing Configuration
+### Release Signing Setup
 
-Release signing credentials can be configured without committing secrets to version control:
+Release keystore details can be passed via environment variables or a local configuration file:
 1. Copy `keystore.properties.example` to `keystore.properties` in the project root.
-2. Fill in your release keystore path and passwords, or set the environment variables:
+2. Provide your signing credentials:
    * `KEYSTORE_FILE`
    * `KEYSTORE_PASSWORD`
    * `KEY_ALIAS`
    * `KEY_PASSWORD`
 
-If no release signing properties are found, Gradle will fall back to the standard debug signing configuration for local verification.
+If no release signing properties are detected, Gradle will automatically build with the debug keystore.
 
 ---
 
-## Project Attribution & License
+## Provenance & Attribution
 
-Cylo is an authorized modification, rebrand, and portfolio showcase maintained by **Leo Aristocrat** with explicit permission from the original author (`zenzeros`).
+Cylo is an independent evolution, rebrand, and portfolio project designed and maintained by **Leo Aristocrat**, derived from the open-source project *Kimon* by `zenzeros`.
 
-* **Original Project**: Kimon by `zenzeros`
+* **Repository**: [LeoAristocrat/Cylo](https://github.com/LeoAristocrat/Cylo)
+* **Upstream Project**: Kimon by `zenzeros`
 * **Original License**: [PolyForm Noncommercial License 1.0.0](LICENSE.md)
 * **Derivative Works**: Copyright (c) 2026 Leo Aristocrat. Available under PolyForm Noncommercial License 1.0.0.

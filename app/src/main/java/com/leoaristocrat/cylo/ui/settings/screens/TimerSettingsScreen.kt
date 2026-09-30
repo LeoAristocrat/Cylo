@@ -1,4 +1,4 @@
-﻿@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 
 package com.leoaristocrat.cylo.ui.settings.screens
 
@@ -63,12 +63,8 @@ import com.leoaristocrat.cylo.ui.theme.CyloShapeDefaults.cardShape
 import com.leoaristocrat.cylo.ui.theme.CyloShapeDefaults.middleListItemShape
 import com.leoaristocrat.cylo.ui.theme.CyloShapeDefaults.segmentedListItemShapes
 import com.leoaristocrat.cylo.ui.theme.CyloShapeDefaults.topListItemShape
-import androidx.compose.material3.ButtonGroupDefaults
-import androidx.compose.material3.ToggleButton
-import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.semantics.role
-import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.text.style.TextOverflow
+import com.leoaristocrat.cylo.ui.pomodoro.ClockStyle
+import com.leoaristocrat.cylo.ui.pomodoro.ClockStylePicker
 import com.leoaristocrat.cylo.ui.theme.LocalAppFonts
 
 @Composable
@@ -301,7 +297,7 @@ fun TimerSettingsScreen(
             Spacer(Modifier.height(14.dp))
 
             // ==========================================
-            // Clock Style Selector (Dial vs Flip Card)
+            // Clock Style Selector (6 Interactive Animated Styles)
             // ==========================================
             Text(
                 text = "Clock style",
@@ -313,48 +309,17 @@ fun TimerSettingsScreen(
                 modifier = Modifier.padding(start = 6.dp, bottom = 6.dp)
             )
 
-            val isDial = state.clockStyle != "FLIP"
-            val clockGroupCount = if (isDial) 2 else 1
-            val clockOptions = listOf("DIAL" to "Dial", "FLIP" to "Flip clock")
-            val currentClockIndex = clockOptions.indexOfFirst { it.first == state.clockStyle }.coerceAtLeast(0)
-
-            SegmentedListItem(
-                content = {
-                    Row(
-                        horizontalArrangement = Arrangement.spacedBy(ButtonGroupDefaults.ConnectedSpaceBetween),
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        clockOptions.forEachIndexed { optIndex, (styleKey, title) ->
-                            val isSelected = currentClockIndex == optIndex
-                            ToggleButton(
-                                checked = isSelected,
-                                onCheckedChange = {
-                                    haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
-                                    onSetClockStyle(styleKey)
-                                },
-                                modifier = Modifier
-                                    .weight(1f)
-                                    .semantics { role = Role.RadioButton },
-                                shapes = when (optIndex) {
-                                    0 -> ButtonGroupDefaults.connectedLeadingButtonShapes()
-                                    clockOptions.lastIndex -> ButtonGroupDefaults.connectedTrailingButtonShapes()
-                                    else -> ButtonGroupDefaults.connectedMiddleButtonShapes()
-                                }
-                            ) {
-                                Text(
-                                    title,
-                                    maxLines = 1,
-                                    overflow = TextOverflow.Ellipsis
-                                )
-                            }
-                        }
-                    }
-                },
-                colors = listItemColors,
-                shapes = segmentedListItemShapes(0, clockGroupCount)
+            ClockStylePicker(
+                selectedStyleId = state.clockStyle,
+                onSelectStyle = { chosenId ->
+                    haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                    onSetClockStyle(chosenId)
+                }
             )
 
+            val isDial = ClockStyle.fromId(state.clockStyle) == ClockStyle.DIAL
             if (isDial) {
+                Spacer(Modifier.height(8.dp))
                 SegmentedListItem(
                     trailingContent = {
                         Switch(
@@ -378,7 +343,7 @@ fun TimerSettingsScreen(
                             colors = switchColors
                         )
                     },
-                    shapes = segmentedListItemShapes(1, clockGroupCount),
+                    shapes = segmentedListItemShapes(0, 1),
                     colors = listItemColors,
                     onClick = {
                         haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)

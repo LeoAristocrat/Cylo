@@ -47,8 +47,6 @@ enum class CyloFloatingTab {
     ANALYZE
 }
 
-typealias KimonTab = CyloFloatingTab
-
 @Composable
 fun CyloFloatingToolbar(
     selectedTab: CyloFloatingTab,

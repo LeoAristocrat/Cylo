@@ -235,7 +235,7 @@
     <string name="backup_create_title">Create Backup</string>
     <string name="backup_create_desc">Export data &amp; settings to a JSON file</string>
     <string name="backup_restore_title">Restore Backup</string>
-    <string name="backup_restore_desc">Import data from a Cylo or Kimon JSON file</string>
+    <string name="backup_restore_desc">Import data from a JSON backup file</string>
     <string name="backup_restore_mode_title">Restore Mode</string>
     <string name="backup_restore_replace">Replace Current Data</string>
     <string name="backup_restore_replace_desc">Overwrites current database with backup</string>

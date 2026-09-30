@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- Outer Precision Orbit Arc (Cylo C Primary - Radius 24.0 around Center 48, 48) -->
+    <path
+        android:strokeColor="#6366F1"
+        android:strokeWidth="5.6"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 64.97,31.03 A 24,24 0 1,0 64.97,64.97" />
+
+    <!-- Inner Orbit Arc (Cylo C Secondary Sky - Radius 14.2 around Center 48, 48) -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="3.6"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 58.04,37.96 A 14.2,14.2 0 1,0 58.04,58.04" />
+
+    <!-- Focal Mindful Center Core (Center 48, 48 - Radius 4.4) -->
+    <path
+        android:fillColor="#818CF8"
+        android:pathData="M 48,43.6 A 4.4,4.4 0 1,0 48,52.4 A 4.4,4.4 0 1,0 48,43.6 Z" />
+
+    <!-- Precision Time Pulse Satellite (Position 69.5, 31.03 - Radius 2.6) -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M 69.5,28.43 A 2.6,2.6 0 1,0 69.5,33.63 A 2.6,2.6 0 1,0 69.5,28.43 Z" />
+</vector>

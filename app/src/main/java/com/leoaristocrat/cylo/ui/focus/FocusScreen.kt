@@ -1,4 +1,4 @@
-﻿@file:OptIn(ExperimentalMaterial3ExpressiveApi::class, ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3ExpressiveApi::class, ExperimentalMaterial3Api::class)
 
 package com.leoaristocrat.cylo.ui.focus
 
@@ -6,6 +6,7 @@ import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.spring
@@ -26,6 +27,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -60,13 +62,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.leoaristocrat.cylo.R
 import com.leoaristocrat.cylo.data.local.entity.TagEntity
+import com.leoaristocrat.cylo.ui.pomodoro.ArcPomodoroClock
+import com.leoaristocrat.cylo.ui.pomodoro.BreathPomodoroClock
+import com.leoaristocrat.cylo.ui.pomodoro.ClockStyle
 import com.leoaristocrat.cylo.ui.pomodoro.ConcentricPomodoroDial
 import com.leoaristocrat.cylo.ui.pomodoro.FlipCardPomodoroClock
+import com.leoaristocrat.cylo.ui.pomodoro.OrbitalPomodoroClock
+import com.leoaristocrat.cylo.ui.pomodoro.SlotMachinePomodoroClock
 import com.leoaristocrat.cylo.ui.pomodoro.TimerStatus
 
 @Composable
 fun FocusScreen(
     remainingSeconds: Int,
+    totalSeconds: Int = 25 * 60,
     timerStatus: TimerStatus,
     clockStyle: String = "DIAL",
     dialTickAnimation: Boolean = false,
@@ -96,6 +104,8 @@ fun FocusScreen(
         label = "actionButtonShape"
     )
 
+    val resolvedClockStyle = remember(clockStyle) { ClockStyle.fromId(clockStyle) }
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
@@ -103,176 +113,67 @@ fun FocusScreen(
             .fillMaxSize()
             .padding(horizontal = 16.dp)
     ) {
-        // 1. Clock Face (Concentric Dial or Flip Card) with Tag Complication
-        Box(
-            modifier = Modifier.weight(1f),
-            contentAlignment = Alignment.Center
+        // 1. Clock Face (Unified Container across all 6 styles with subtle Crossfade)
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-            if (clockStyle == "FLIP") {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    Box(
-                        modifier = Modifier
-                            .weight(1f)
-                            .padding(vertical = 12.dp),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        FlipCardPomodoroClock(
+            Box(
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth(),
+                contentAlignment = Alignment.Center
+            ) {
+                AnimatedContent(
+                    targetState = resolvedClockStyle,
+                    transitionSpec = {
+                        fadeIn(animationSpec = tween(280, easing = FastOutSlowInEasing)) togetherWith
+                        fadeOut(animationSpec = tween(200, easing = FastOutSlowInEasing))
+                    },
+                    label = "clockStyleTransition",
+                    contentAlignment = Alignment.Center
+                ) { targetStyle ->
+                    when (targetStyle) {
+                        ClockStyle.DIAL -> ConcentricPomodoroDial(
+                            remainingSeconds = remainingSeconds,
+                            isTickAnimation = dialTickAnimation
+                        )
+                        ClockStyle.FLIP -> FlipCardPomodoroClock(
                             remainingSeconds = remainingSeconds
                         )
-                    }
-
-                    // Tag complication pill below flip card
-                    Surface(
-                        onClick = { isTagSheetOpen = true },
-                        shape = CircleShape,
-                        color = if (selectedTag != null) {
-                            MaterialTheme.colorScheme.surfaceContainerHigh.copy(alpha = 0.88f)
-                        } else {
-                            MaterialTheme.colorScheme.surfaceContainerHighest.copy(alpha = 0.35f)
-                        },
-                        border = BorderStroke(
-                            width = 1.dp,
-                            color = if (selectedTag != null) {
-                                val tagColor = try {
-                                    Color(android.graphics.Color.parseColor(selectedTag.colorHex))
-                                } catch (e: Exception) {
-                                    MaterialTheme.colorScheme.primary
-                                }
-                                tagColor.copy(alpha = 0.5f)
-                            } else {
-                                MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.25f)
-                            }
-                        ),
-                        modifier = Modifier.padding(bottom = 12.dp)
-                    ) {
-                        Row(
-                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 5.dp),
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.spacedBy(6.dp)
-                        ) {
-                            if (selectedTag != null) {
-                                val tagColor = remember(selectedTag.colorHex) {
-                                    try {
-                                        Color(android.graphics.Color.parseColor(selectedTag.colorHex))
-                                    } catch (e: Exception) {
-                                        Color(0xFF6366F1)
-                                    }
-                                }
-                                Box(
-                                    modifier = Modifier
-                                        .size(7.dp)
-                                        .clip(CircleShape)
-                                        .background(tagColor)
-                                )
-                                Text(
-                                    text = selectedTag.name,
-                                    style = MaterialTheme.typography.labelMedium.copy(
-                                        fontWeight = FontWeight.SemiBold,
-                                        fontSize = 12.5.sp
-                                    ),
-                                    color = MaterialTheme.colorScheme.onSurface
-                                )
-                            } else {
-                                Icon(
-                                    painter = painterResource(R.drawable.ic_tag),
-                                    contentDescription = null,
-                                    tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f),
-                                    modifier = Modifier.size(13.dp)
-                                )
-                                Text(
-                                    text = stringResource(R.string.tag_choose_button),
-                                    style = MaterialTheme.typography.labelMedium.copy(
-                                        fontWeight = FontWeight.Medium,
-                                        fontSize = 12.5.sp
-                                    ),
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f)
-                                )
-                            }
-                        }
-                    }
-                }
-            } else {
-                ConcentricPomodoroDial(
-                    remainingSeconds = remainingSeconds,
-                    isTickAnimation = dialTickAnimation
-                )
-
-                // Integrated Center Tag Complication (Below big minutes text)
-                Surface(
-                    onClick = { isTagSheetOpen = true },
-                    shape = CircleShape,
-                    color = if (selectedTag != null) {
-                        MaterialTheme.colorScheme.surfaceContainerHigh.copy(alpha = 0.88f)
-                    } else {
-                        MaterialTheme.colorScheme.surfaceContainerHighest.copy(alpha = 0.35f)
-                    },
-                    border = BorderStroke(
-                        width = 1.dp,
-                        color = if (selectedTag != null) {
-                            val tagColor = try {
-                                Color(android.graphics.Color.parseColor(selectedTag.colorHex))
-                            } catch (e: Exception) {
-                                MaterialTheme.colorScheme.primary
-                            }
-                            tagColor.copy(alpha = 0.5f)
-                        } else {
-                            MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.25f)
-                        }
-                    ),
-                    modifier = Modifier
-                        .align(Alignment.Center)
-                        .padding(top = 96.dp)
-                ) {
-                    Row(
-                        modifier = Modifier.padding(horizontal = 11.dp, vertical = 4.5.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(5.dp)
-                    ) {
-                        if (selectedTag != null) {
-                            val tagColor = remember(selectedTag.colorHex) {
-                                try {
-                                    Color(android.graphics.Color.parseColor(selectedTag.colorHex))
-                                } catch (e: Exception) {
-                                    Color(0xFF6366F1)
-                                }
-                            }
-                            Box(
-                                modifier = Modifier
-                                    .size(7.dp)
-                                    .clip(CircleShape)
-                                    .background(tagColor)
-                            )
-                            Text(
-                                text = selectedTag.name,
-                                style = MaterialTheme.typography.labelMedium.copy(
-                                    fontWeight = FontWeight.SemiBold,
-                                    fontSize = 12.sp
-                                ),
-                                color = MaterialTheme.colorScheme.onSurface
-                            )
-                        } else {
-                            Icon(
-                                painter = painterResource(R.drawable.ic_tag),
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f),
-                                modifier = Modifier.size(13.dp)
-                            )
-                            Text(
-                                text = stringResource(R.string.tag_choose_button),
-                                style = MaterialTheme.typography.labelMedium.copy(
-                                    fontWeight = FontWeight.Medium,
-                                    fontSize = 12.sp
-                                ),
-                                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f)
-                            )
-                        }
+                        ClockStyle.ARC -> ArcPomodoroClock(
+                            remainingSeconds = remainingSeconds,
+                            totalSeconds = totalSeconds,
+                            timerStatus = timerStatus
+                        )
+                        ClockStyle.ORBITAL -> OrbitalPomodoroClock(
+                            remainingSeconds = remainingSeconds,
+                            totalSeconds = totalSeconds,
+                            timerStatus = timerStatus
+                        )
+                        ClockStyle.SLOT_MACHINE -> SlotMachinePomodoroClock(
+                            remainingSeconds = remainingSeconds,
+                            totalSeconds = totalSeconds,
+                            timerStatus = timerStatus
+                        )
+                        ClockStyle.BREATH -> BreathPomodoroClock(
+                            remainingSeconds = remainingSeconds,
+                            totalSeconds = totalSeconds,
+                            timerStatus = timerStatus
+                        )
                     }
                 }
             }
+
+            // Consistent Tag complication pill situated cleanly below ALL clocks
+            FocusTagComplicationPill(
+                selectedTag = selectedTag,
+                onClick = { isTagSheetOpen = true },
+                modifier = Modifier.padding(bottom = 12.dp)
+            )
         }
 
         // 3. 3-State Expressive Button (Start / Pause / Resume) + Animated Circle Restart Button
@@ -413,5 +314,66 @@ fun FocusScreen(
             onDeleteTag = onDeleteTag,
             onDismissRequest = { isTagSheetOpen = false }
         )
+    }
+}
+
+@Composable
+private fun FocusTagComplicationPill(
+    selectedTag: TagEntity?,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Surface(
+        onClick = onClick,
+        shape = CircleShape,
+        color = MaterialTheme.colorScheme.surfaceContainerHighest.copy(alpha = 0.65f),
+        border = BorderStroke(
+            width = 1.dp,
+            color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.4f)
+        ),
+        modifier = modifier
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(6.dp),
+            modifier = Modifier.padding(horizontal = 14.dp, vertical = 7.dp)
+        ) {
+            if (selectedTag != null) {
+                val tagColor = remember(selectedTag.colorHex) {
+                    runCatching { Color(android.graphics.Color.parseColor(selectedTag.colorHex)) }.getOrNull()
+                } ?: MaterialTheme.colorScheme.primary
+                Box(
+                    modifier = Modifier
+                        .size(8.dp)
+                        .background(
+                            color = tagColor,
+                            shape = CircleShape
+                        )
+                )
+                Text(
+                    text = selectedTag.name,
+                    style = MaterialTheme.typography.labelMedium.copy(
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 12.sp
+                    ),
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+            } else {
+                Icon(
+                    painter = painterResource(R.drawable.ic_tag),
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f),
+                    modifier = Modifier.size(13.dp)
+                )
+                Text(
+                    text = stringResource(R.string.tag_choose_button),
+                    style = MaterialTheme.typography.labelMedium.copy(
+                        fontWeight = FontWeight.Medium,
+                        fontSize = 12.sp
+                    ),
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f)
+                )
+            }
+        }
     }
 }

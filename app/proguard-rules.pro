@@ -1,4 +1,4 @@
-# R8 Max Level Optimization Rules for Kimon
+# R8 Max Level Optimization Rules for Cylo
 
 # Optimize code aggressively
 -optimizationpasses 5

@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -20,6 +21,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FilledTonalIconButton
@@ -68,9 +70,8 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-// Configurable repository placeholder - replace <YOUR_GITHUB_USERNAME> with your actual GitHub username
-private const val GITHUB_REPO_URL = "https://github.com/<YOUR_GITHUB_USERNAME>/cylo"
-private const val GITHUB_ISSUES_URL = "https://github.com/<YOUR_GITHUB_USERNAME>/cylo/issues"
+private const val GITHUB_REPO_URL = "https://github.com/LeoAristocrat/Cylo"
+private const val GITHUB_ISSUES_URL = "https://github.com/LeoAristocrat/Cylo/issues"
 
 @Composable
 fun AboutSettingsScreen(
@@ -79,7 +80,6 @@ fun AboutSettingsScreen(
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
-    val squircleShape = MaterialShapes.Cookie12Sided.toShape()
 
     val packageInfo = remember {
         try {
@@ -145,16 +145,25 @@ fun AboutSettingsScreen(
                         .padding(top = 10.dp, bottom = 14.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    AsyncImage(
-                        model = ImageRequest.Builder(context)
-                            .data(R.mipmap.ic_launcher)
-                            .build(),
-                        contentDescription = "Cylo app icon",
-                        contentScale = ContentScale.Crop,
+                    Box(
                         modifier = Modifier
                             .size(96.dp)
-                            .clip(squircleShape)
-                    )
+                            .clip(RoundedCornerShape(26.dp))
+                            .background(MaterialTheme.colorScheme.surfaceContainerHighest.copy(alpha = 0.5f))
+                            .border(
+                                width = 1.dp,
+                                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.35f),
+                                shape = RoundedCornerShape(26.dp)
+                            ),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Image(
+                            painter = painterResource(R.drawable.ic_cylo_brand_logo),
+                            contentDescription = "Cylo brand logo",
+                            modifier = Modifier.size(68.dp),
+                            contentScale = ContentScale.Fit
+                        )
+                    }
 
                     Spacer(modifier = Modifier.height(16.dp))
 
@@ -244,7 +253,7 @@ fun AboutSettingsScreen(
                 AboutItem(
                     icon = R.drawable.ic_github,
                     title = "GitHub Repository",
-                    subtitle = "github.com/<YOUR_GITHUB_USERNAME>/cylo",
+                    subtitle = "github.com/LeoAristocrat/Cylo",
                     shape = topListItemShape,
                     isExternal = true,
                     onClick = { openUrl(context, GITHUB_REPO_URL) }
@@ -255,7 +264,7 @@ fun AboutSettingsScreen(
                 AboutItem(
                     icon = R.drawable.ic_badge_check,
                     title = "Contribute & Feedback",
-                    subtitle = "github.com/<YOUR_GITHUB_USERNAME>/cylo/issues",
+                    subtitle = "github.com/LeoAristocrat/Cylo/issues",
                     shape = bottomListItemShape,
                     isExternal = true,
                     onClick = { openUrl(context, GITHUB_ISSUES_URL) }

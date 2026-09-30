@@ -1,4 +1,4 @@
-﻿@file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
+@file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
 package com.leoaristocrat.cylo.ui.pomodoro
 
@@ -92,15 +92,43 @@ fun PomodoroHomeScreen(
                 contentAlignment = Alignment.Center
             ) {
                 when (state.clockStyle) {
-                    ClockStyle.FLIP_CARD -> {
+                    ClockStyle.FLIP -> {
                         FlipCardPomodoroClock(
                             remainingSeconds = state.remainingSeconds,
                             spacing = sidePadding
                         )
                     }
-                    ClockStyle.CONCENTRIC -> {
+                    ClockStyle.DIAL -> {
                         ConcentricPomodoroDial(
                             remainingSeconds = state.remainingSeconds
+                        )
+                    }
+                    ClockStyle.ARC -> {
+                        ArcPomodoroClock(
+                            remainingSeconds = state.remainingSeconds,
+                            totalSeconds = state.totalSeconds,
+                            timerStatus = state.timerStatus
+                        )
+                    }
+                    ClockStyle.ORBITAL -> {
+                        OrbitalPomodoroClock(
+                            remainingSeconds = state.remainingSeconds,
+                            totalSeconds = state.totalSeconds,
+                            timerStatus = state.timerStatus
+                        )
+                    }
+                    ClockStyle.SLOT_MACHINE -> {
+                        SlotMachinePomodoroClock(
+                            remainingSeconds = state.remainingSeconds,
+                            totalSeconds = state.totalSeconds,
+                            timerStatus = state.timerStatus
+                        )
+                    }
+                    ClockStyle.BREATH -> {
+                        BreathPomodoroClock(
+                            remainingSeconds = state.remainingSeconds,
+                            totalSeconds = state.totalSeconds,
+                            timerStatus = state.timerStatus
                         )
                     }
                 }

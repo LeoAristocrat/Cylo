@@ -1,4 +1,4 @@
-# Cylo — Screenshots
+# Cylo — App Screenshots
 
 > A focused companion app for Pomodoro timers, analytics, task planning, and sleep tracking.
 
@@ -6,152 +6,36 @@
 
 ## Focus Timer
 
-Two clock styles — **Concentric Dial** and **Flip Card** — for a distraction-free 25-minute session.
+Choose between expressive clock styles — such as **Concentric Dial** and **Flip Clock** — for an immersive, distraction-free session.
 
 <table>
   <tr>
     <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-121953_Cylo.png" width="220"/><br/>
-      <sub><b>Dial Timer · Dark</b></sub>
+      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_01_Focus_Dial.png" width="280" alt="Concentric Dial Clock"/><br/>
+      <sub><b>Concentric Dial Timer</b></sub>
     </td>
     <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122207_Cylo.png" width="220"/><br/>
-      <sub><b>Flip Timer · Light</b></sub>
+      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_02_Focus_Flip.png" width="280" alt="Flip Clock"/><br/>
+      <sub><b>Flip Clock Timer</b></sub>
     </td>
   </tr>
 </table>
 
 ---
 
-## Analyze — Overview
+## Planning & Analytics
 
-Streaks, activity calendar, and lifetime focus stats at a glance.
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122017_Cylo.png" width="220"/><br/>
-      <sub><b>Overview · Dark</b></sub>
-    </td>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122211_Cylo.png" width="220"/><br/>
-      <sub><b>Overview · Light</b></sub>
-    </td>
-  </tr>
-</table>
-
----
-
-## Analyze — Day View
-
-Hourly focus bar chart and a colour-coded timeline of every session.
+Organize your tasks with session estimates and track streaks, stats, and activity with an interactive calendar heatmap.
 
 <table>
   <tr>
     <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122025_Cylo.png" width="220"/><br/>
-      <sub><b>Day View · Dark</b></sub>
+      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_03_Plan.png" width="280" alt="Plan Screen"/><br/>
+      <sub><b>Plan — Tasks & Sessions</b></sub>
     </td>
     <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122223_Cylo.png" width="220"/><br/>
-      <sub><b>Day View · Light</b></sub>
-    </td>
-  </tr>
-</table>
-
----
-
-## Analyze — Week View
-
-Weekly totals, tag distribution donut, and a smooth focus-trend line chart.
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122029_Cylo.png" width="220"/><br/>
-      <sub><b>Week View · Dark</b></sub>
-    </td>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122219_Cylo.png" width="220"/><br/>
-      <sub><b>Week View · Light</b></sub>
-    </td>
-  </tr>
-</table>
-
----
-
-## Analyze — Year View
-
-All-time statistics and a continuous heat map of focus days.
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122038_Cylo.png" width="220"/><br/>
-      <sub><b>Year View · Dark</b></sub>
-    </td>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122215_Cylo.png" width="220"/><br/>
-      <sub><b>Year View · Light</b></sub>
-    </td>
-  </tr>
-</table>
-
----
-
-## Plan
-
-Task list with estimated Pomodoro counts and completion tracking.
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122042_Cylo.png" width="220"/><br/>
-      <sub><b>Plan · Dark</b></sub>
-    </td>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122231_Cylo.png" width="220"/><br/>
-      <sub><b>Plan · Light</b></sub>
-    </td>
-  </tr>
-</table>
-
----
-
-## Sleep & Daily Steps
-
-Sleep duration, quality score, bedtime/wake-up times, and step count — all in one screen.
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122049_Cylo.png" width="220"/><br/>
-      <sub><b>Sleep · Dark</b></sub>
-    </td>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122234_Cylo.png" width="220"/><br/>
-      <sub><b>Sleep · Light</b></sub>
-    </td>
-  </tr>
-</table>
-
----
-
-## Settings
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122122_Cylo.png" width="220"/><br/>
-      <sub><b>Settings · Dark</b></sub>
-    </td>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122138_Cylo.png" width="220"/><br/>
-      <sub><b>Appearance &amp; Theme · Dark</b></sub>
-    </td>
-    <td align="center">
-      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_20260912-122145_Cylo.png" width="220"/><br/>
-      <sub><b>Settings · Light</b></sub>
+      <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/Screenshot_04_Analyze.png" width="280" alt="Analyze Screen"/><br/>
+      <sub><b>Analyze — Overview & Activity Log</b></sub>
     </td>
   </tr>
 </table>

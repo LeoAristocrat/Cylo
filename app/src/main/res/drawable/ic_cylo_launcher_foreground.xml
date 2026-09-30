@@ -4,29 +4,30 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Outer concentric focus loop (Stylized C for Cylo) -->
+
+    <!-- Outer Precision Orbit Arc (Cylo C Primary - Radius 21.0 around Center 54, 54) -->
     <path
-        android:strokeColor="#7C4DFF"
-        android:strokeWidth="5.5"
+        android:strokeColor="#6366F1"
+        android:strokeWidth="5.0"
         android:strokeLineCap="round"
         android:fillColor="#00000000"
-        android:pathData="M 68,36 A 22,22 0 1,0 68,72" />
+        android:pathData="M 68.85,39.15 A 21,21 0 1,0 68.85,68.85" />
 
-    <!-- Inner cycle arc -->
+    <!-- Inner Orbit Arc (Cylo C Secondary Sky - Radius 12.5 around Center 54, 54) -->
     <path
-        android:strokeColor="#00E5FF"
-        android:strokeWidth="3.5"
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="3.2"
         android:strokeLineCap="round"
         android:fillColor="#00000000"
-        android:pathData="M 62,44 A 13,13 0 1,0 62,64" />
+        android:pathData="M 62.84,45.16 A 12.5,12.5 0 1,0 62.84,62.84" />
 
-    <!-- Focal center point -->
+    <!-- Focal Mindful Center Core (Center 54, 54 - Radius 3.8) -->
     <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M 54,50 A 4,4 0 1,0 54,58 A 4,4 0 1,0 54,50 Z" />
+        android:fillColor="#818CF8"
+        android:pathData="M 54,50.2 A 3.8,3.8 0 1,0 54,57.8 A 3.8,3.8 0 1,0 54,50.2 Z" />
 
-    <!-- Leading timer tick indicator -->
+    <!-- Precision Time Pulse Satellite (Position 72.5, 39.15 - Radius 2.2) -->
     <path
-        android:fillColor="#7C4DFF"
-        android:pathData="M 74,36 A 2.5,2.5 0 1,0 74,41 A 2.5,2.5 0 1,0 74,36 Z" />
+        android:fillColor="#F59E0B"
+        android:pathData="M 72.5,36.95 A 2.2,2.2 0 1,0 72.5,41.35 A 2.2,2.2 0 1,0 72.5,36.95 Z" />
 </vector>

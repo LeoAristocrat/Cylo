@@ -30,9 +30,8 @@ import java.net.URI
 object UpdateChecker {
 
     private const val TAG = "UpdateChecker"
-    // Configurable repository placeholder - replace <YOUR_GITHUB_USERNAME> with your actual GitHub username
     private const val LATEST_RELEASE_URL =
-        "https://api.github.com/repos/<YOUR_GITHUB_USERNAME>/cylo/releases/latest"
+        "https://api.github.com/repos/LeoAristocrat/Cylo/releases/latest"
 
     private const val PREFS = "kimon_update_prefs"
     private const val KEY_LAST_CHECK_MS = "last_check_ms"
@@ -116,7 +115,7 @@ object UpdateChecker {
             val o = JSONObject(json)
             ReleaseInfo(
                 tag = o.optString("tag_name"),
-                url = o.optString("html_url", "https://github.com/<YOUR_GITHUB_USERNAME>/cylo/releases/latest"),
+                url = o.optString("html_url", "https://github.com/LeoAristocrat/Cylo/releases/latest"),
                 name = o.optString("name").ifBlank { null },
                 body = o.optString("body").ifBlank { null },
                 prerelease = o.optBoolean("prerelease", false),

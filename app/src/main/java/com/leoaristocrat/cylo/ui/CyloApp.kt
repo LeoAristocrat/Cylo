@@ -109,8 +109,6 @@ private enum class CyloTab(val titleRes: Int, val iconRes: Int) {
     STEPS(R.string.tab_steps, R.drawable.ic_steps)
 }
 
-private typealias KimonTab = CyloTab
-
 @Composable
 fun CyloApp(
     onContentReady: () -> Unit = {},
@@ -492,6 +490,7 @@ fun CyloApp(
                             CyloTab.PLAN -> PlanScreen()
                             CyloTab.FOCUS -> FocusScreen(
                                 remainingSeconds = pomodoroUiState.remainingSeconds,
+                                totalSeconds = pomodoroUiState.totalSeconds,
                                 timerStatus = pomodoroUiState.timerStatus,
                                 clockStyle = settingsState.clockStyle,
                                 dialTickAnimation = settingsState.dialTickAnimation,

@@ -44,6 +44,17 @@ android {
     }
 
     signingConfigs {
+        create("customDebug") {
+            val projectDebugKeystore = rootProject.file("debug.keystore")
+            if (projectDebugKeystore.exists()) {
+                storeFile = projectDebugKeystore
+                storePassword = "android"
+                keyAlias = "androiddebugkey"
+                keyPassword = "android"
+            }
+            enableV1Signing = true
+            enableV2Signing = true
+        }
         create("release") {
             val keyStorePath = keystoreProps.getProperty("storeFile") ?: System.getenv("KEYSTORE_FILE")
             val keyStorePass = keystoreProps.getProperty("storePassword") ?: System.getenv("KEYSTORE_PASSWORD")
@@ -78,7 +89,7 @@ android {
         }
         debug {
             versionNameSuffix = "-debug"
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.getByName("customDebug")
         }
     }
 

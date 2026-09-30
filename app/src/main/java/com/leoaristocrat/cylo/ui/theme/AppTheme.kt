@@ -1,4 +1,4 @@
-﻿package com.leoaristocrat.cylo.ui.theme
+package com.leoaristocrat.cylo.ui.theme
 
 import androidx.annotation.StringRes
 import androidx.compose.material3.ColorScheme
@@ -8,7 +8,7 @@ import androidx.compose.ui.graphics.Color
 import com.leoaristocrat.cylo.R
 
 /**
- * App themes ported from mpvEx (Aniyomi design) + Kimon Nothing OS
+ * App themes ported from mpvEx (Aniyomi design) + Cylo Nothing OS
  */
 enum class AppTheme(
     @StringRes val titleRes: Int,

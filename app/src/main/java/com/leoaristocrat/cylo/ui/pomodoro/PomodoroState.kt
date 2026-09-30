@@ -1,4 +1,4 @@
-﻿@file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
+@file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
 package com.leoaristocrat.cylo.ui.pomodoro
 
@@ -17,9 +17,27 @@ enum class TimerStatus {
     PAUSED
 }
 
-enum class ClockStyle(val label: String) {
-    FLIP_CARD("Flip Card"),
-    CONCENTRIC("Concentric")
+enum class ClockStyle(val id: String, val label: String) {
+    DIAL("DIAL", "Dial"),
+    FLIP("FLIP", "Flip"),
+    ARC("ARC", "Arc"),
+    ORBITAL("ORBITAL", "Orbital"),
+    SLOT_MACHINE("SLOT_MACHINE", "Slot Machine"),
+    BREATH("BREATH", "Breath");
+
+    companion object {
+        val FLIP_CARD = FLIP
+        val CONCENTRIC = DIAL
+
+        fun fromId(id: String?): ClockStyle = when (id?.uppercase()) {
+            "FLIP", "FLIP_CARD" -> FLIP
+            "ARC" -> ARC
+            "ORBITAL" -> ORBITAL
+            "SLOT_MACHINE", "SLOT" -> SLOT_MACHINE
+            "BREATH" -> BREATH
+            else -> DIAL
+        }
+    }
 }
 
 data class PomodoroTask(
