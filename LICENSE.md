@@ -1,12 +1,14 @@
-Copyright (c) 2026 zenzeros
+# Cylo License
 
-Required Notice: Copyright (c) 2026 zenzeros — https://github.com/zenzer0s/kimon
+Copyright (c) 2026 Sayeem Sadik / Leo Aristocrat — https://github.com/LeoAristocrat/Cylo
 
----
+Required Notice: Copyright (c) 2026 Sayeem Sadik / Leo Aristocrat — https://github.com/LeoAristocrat/Cylo
+
+\---
 
 # PolyForm Noncommercial License 1.0.0
 
-<https://polyformproject.org/licenses/noncommercial/1.0.0>
+[https://polyformproject.org/licenses/noncommercial/1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0)
 
 ## Acceptance
 
@@ -24,7 +26,7 @@ The licensor grants you an additional copyright license to distribute copies of 
 
 You must ensure that anyone who gets a copy of any part of the software from you also gets a copy of these terms or the URL for them above, as well as copies of any plain-text lines beginning with `Required Notice:` that the licensor provided with the software.  For example:
 
-> Required Notice: Copyright Yoyodyne, Inc. (http://example.com)
+> Required Notice: Copyright (c) 2026 Sayeem Sadik / Leo Aristocrat — https://github.com/LeoAristocrat/Cylo
 
 ## Changes and New Works License
 
@@ -78,10 +80,11 @@ The **licensor** is the individual or entity offering these terms, and the **sof
 
 **Use** means anything you do with the software requiring one of your licenses.
 
----
+\---
 
-### Project Attribution & Authorized Derivative Notice
+### Project Attribution \& Heritage
 
-Cylo is an authorized modification, rebrand, and portfolio showcase maintained by **Leo Aristocrat** with explicit permission from the original author (zenzeros).
-* Original code copyright (c) 2026 zenzeros under PolyForm Noncommercial License 1.0.0.
-* Modifications, enhancements, and rebrand for Cylo copyright (c) 2026 Leo Aristocrat.
+Cylo is developed and maintained by **Sayeem Sadik / Leo Aristocrat** ([https://github.com/LeoAristocrat/Cylo](https://github.com/LeoAristocrat/Cylo)).
+
+* Derivative works, clock redesigns, UI/UX unification, and enhancements: Copyright (c) 2026 Sayeem Sadik / Leo Aristocrat under PolyForm Noncommercial License 1.0.0.
+

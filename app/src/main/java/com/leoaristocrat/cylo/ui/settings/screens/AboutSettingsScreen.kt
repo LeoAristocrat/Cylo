@@ -226,7 +226,7 @@ fun AboutSettingsScreen(
             item {
                 AboutItem(
                     icon = R.drawable.ic_profile,
-                    title = "Built by Leo Aristocrat",
+                    title = "Built by Sayeem Sadik / Leo Aristocrat",
                     subtitle = "Focus, Planning & Sleep Companion",
                     subtitleColor = MaterialTheme.colorScheme.primary,
                     shape = singleListItemShape,

@@ -204,7 +204,7 @@ fun SettingsMainScreen(
                 key = CyloNavKey.AboutSettings,
                 icon = R.drawable.ic_profile,
                 title = R.string.settings_section_about,
-                subtitle = "Leo Aristocrat, open source & info"
+                subtitle = "Sayeem Sadik / Leo Aristocrat, open source & info"
             )
         )
     }

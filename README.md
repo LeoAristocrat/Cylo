@@ -4,7 +4,7 @@
 
 # Cylo — Mindful Focus, Planning & Daily Rhythm
 
-> **Crafted by Leo Aristocrat**  
+> **Crafted by Sayeem Sadik / Leo Aristocrat**  
 > An intentional, distraction-free productivity workspace for Android that merges deep focus intervals, structured task planning, habit analytics, and holistic rest monitoring.
 
 [![GitHub](https://img.shields.io/badge/GitHub-LeoAristocrat%2FCylo-6C5CE7?logo=github)](https://github.com/LeoAristocrat/Cylo)
@@ -106,26 +106,3 @@ Cylo approaches productivity as an organic rhythm: purposeful focus periods, dis
 # Compile signed release APK
 ./gradlew assembleRelease
 ```
-
-### Release Signing Setup
-
-Release keystore details can be passed via environment variables or a local configuration file:
-1. Copy `keystore.properties.example` to `keystore.properties` in the project root.
-2. Provide your signing credentials:
-   * `KEYSTORE_FILE`
-   * `KEYSTORE_PASSWORD`
-   * `KEY_ALIAS`
-   * `KEY_PASSWORD`
-
-If no release signing properties are detected, Gradle will automatically build with the debug keystore.
-
----
-
-## Provenance & Attribution
-
-Cylo is an independent evolution, rebrand, and portfolio project designed and maintained by **Leo Aristocrat**, derived from the open-source project *Kimon* by `zenzeros`.
-
-* **Repository**: [LeoAristocrat/Cylo](https://github.com/LeoAristocrat/Cylo)
-* **Upstream Project**: Kimon by `zenzeros`
-* **Original License**: [PolyForm Noncommercial License 1.0.0](LICENSE.md)
-* **Derivative Works**: Copyright (c) 2026 Leo Aristocrat. Available under PolyForm Noncommercial License 1.0.0.
